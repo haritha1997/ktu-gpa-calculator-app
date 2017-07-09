@@ -1,4 +1,6 @@
-# GpaApp
+# GPA App
+
+[Click](https://nvnmo.github.io/ktu-gpa-calculator-app/) to use the App.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.2.0.
 
