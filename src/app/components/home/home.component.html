@@ -1,0 +1,6 @@
+<h2 class="text-center">Copy and Paste Your Result String </h2>
+<input type="text" class="form-control" placeholder="{{placeholder}}" [(ngModel)]="resultString" >
+<br>
+<div class="text-center">
+    <a [routerLink]="['/credits']" (click)="parseString()" class="btn" [ngClass]="{'disabled btn-default': !resultString,'btn-success': resultString }">Continue</a>    
+</div>

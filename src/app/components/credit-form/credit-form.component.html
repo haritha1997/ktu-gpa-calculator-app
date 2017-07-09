@@ -1,0 +1,46 @@
+
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Subject Code</th>
+      <th>Grade</th>
+      <th>Point</th>
+      <th>Credits</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let grade of gradeList;let index = index;">
+      <td [ngClass]="{'danger': !grade.gradePoint }">{{index + 1}}</td>
+      <td [ngClass]="{'danger': !grade.gradePoint }">{{grade.subjectCode}}</td>
+      <td [ngClass]="{'danger': !grade.gradePoint }">{{grade.letterGrade}}</td>
+      <td [ngClass]="{'danger': !grade.gradePoint }">{{grade.gradePoint}}</td>
+      <td [ngClass]="{'danger': !grade.gradePoint }">
+        <input type="number" class="form-control credit-field" placeholder="0" [(ngModel)]="gradeList[index].credit">        
+      </td>
+      
+    </tr>
+  </tbody>
+</table>
+
+<h3 *ngIf="gradeList.length < 8" class="text-center"> Missing Something?  <button *ngIf="!isNewFormVisible" class="btn btn-default" (click)="toggleAddNewForm()"><i class="glyphicon glyphicon-plus"></i></button></h3>
+
+<div class="row" *ngIf="isNewFormVisible">
+  <div class="col-xs-3">
+    <input  [(ngModel)]="newGrade.subjectCode" type="text" class="form-control" placeholder="Subject Code" required>
+  </div>
+  <div class="col-xs-3">
+    <input  [(ngModel)]="newGrade.letterGrade" type="text" class="form-control" placeholder="Grade" required>
+  </div>
+  <div class="col-xs-3">
+    <input  [(ngModel)]="newGrade.credit" type="number" class="form-control" placeholder="Credit" required>    
+  </div>
+  <div class="col-xs-3">
+    <button class="btn btn-default" (click)="addNewGrade()"><i class="glyphicon glyphicon-plus"></i></button>
+  </div>
+
+</div>
+<br/>
+<div class="text-center">
+  <a [routerLink]="['/result']" class="btn btn-success" [ngClass]="{'disabled': !gradeList.length }">Calculate</a>  
+</div>

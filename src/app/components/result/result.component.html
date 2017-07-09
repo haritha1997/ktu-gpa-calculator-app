@@ -1,0 +1,10 @@
+<div class="text-center">
+  <h1>Your SGPA is</h1>
+  <h2 class="header-text" [ngClass]="{'text-danger': gpa <= 3.33,'text-warning': gpa > 3.33 && gpa <= 6.66, 'text-success': gpa > 6.66}">
+    {{ gpaRounded }}
+  </h2>
+</div>
+
+<div class="progress">
+  <div class="progress-bar" [ngClass]="{'progress-bar-danger': gpa <= 3.33,'progress-bar-warning': gpa > 3.33 && gpa <= 6.66, 'progress-bar-success': gpa > 6.66}" [style.width]="(gpa*10) + '%'"></div>
+</div>
