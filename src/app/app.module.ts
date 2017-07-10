@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { FormsModule }   from '@angular/forms';
+import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
@@ -29,6 +30,7 @@ const routesConfig: Routes = [
     BrowserModule,
     RouterModule.forRoot(routesConfig),
     FormsModule,
+    HttpModule,
   ],
   providers: [GradeCartService],
   bootstrap: [AppComponent]

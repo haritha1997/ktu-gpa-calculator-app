@@ -1,4 +1,8 @@
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs/Rx';
+import { Http, Response } from '@angular/http';
+
+import 'rxjs/add/operator/map';
 
 @Injectable()
 export class GradeCartService {
@@ -8,8 +12,11 @@ export class GradeCartService {
 
   gradeValues: any;
 
+  creditList: any;
 
-  constructor() {
+  private creditDataURL: string = '/data.json';
+
+  constructor(private http: Http) {
     this.gradeValues = {
       'O': 10,
       'A+': 9,
@@ -21,7 +28,25 @@ export class GradeCartService {
       'F': 0
     };
 
+    this.getCreditlist().subscribe(data => {
+      this.creditList = data.data;
+      // console.log(this.creditList);
+    },
+      err => console.log(err)
+    );
 
+
+   }
+
+   getCreditlist(){
+    return this.http.get(this.creditDataURL)
+            .map((res) => res.json())
+            .catch((error:any) => Observable.throw(error.json().error || 'Server error'));
+   }
+
+   getCreditForSubject(sub: string){
+     sub = sub.toUpperCase();
+     return this.creditList[sub.slice(0,2)][sub];
    }
 
    parseGradeString(gs:string){
@@ -39,7 +64,7 @@ export class GradeCartService {
             subjectCode: m[1],
             letterGrade: m[2],
             gradePoint: this.getGradeValue(m[2]),
-            credit: 0
+            credit: this.getCreditForSubject(m[1])
           };
 
           this.parsedGrades.push(grade);

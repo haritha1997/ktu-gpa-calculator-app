@@ -1,5 +1,6 @@
 #!/bin/bash
 ng build --prod --aot
+cp ./src/data.json ./dist/
 git add .
 git status
 read test
