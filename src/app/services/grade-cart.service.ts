@@ -61,6 +61,11 @@ export class GradeCartService {
      return this.parsedGrades;
    }
 
+   resetData(){
+     this.gradeString = '';
+     this.parsedGrades = [];
+   }
+
 }
 
 

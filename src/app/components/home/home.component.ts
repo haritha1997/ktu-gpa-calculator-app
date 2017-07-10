@@ -15,6 +15,7 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
     this.placeholder = "HS200(A+), MA202(A+), CS202(O), CS204(B+), CS206(A), CS232(A+), CS208(B+),CS234(A+)";
+    this.gc.resetData();
   }
 
   parseString(){

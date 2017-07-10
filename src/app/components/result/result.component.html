@@ -9,7 +9,17 @@
   <div class="progress-bar" [ngClass]="{'progress-bar-danger': gpa <= 3.33,'progress-bar-warning': gpa > 3.33 && gpa <= 6.66, 'progress-bar-success': gpa > 6.66}" [style.width]="(gpa*10) + '%'"></div>
 </div>
 
-<div id="adv"></div>
+
+<h3 class="text-center">Want to score better? Checkout the <a href="http://amzn.to/2tz73Wo" target="_blank" class="exam-central-link">Exam Central</a></h3>
+
+<br>
+<div class="text-center">
+  <a [routerLink]="['/']" class="btn btn-info">Try Again</a>  
+</div>
+<br>
+
+<h5 class="text-center">Advertisements</h5>
+<hr>
 <div class="row">
   <div class="col-xs-6 col-sm-3" id="adv1"></div>
   <div class="col-xs-6 col-sm-3" id="adv2"></div>
