@@ -14,7 +14,7 @@ export class GradeCartService {
 
   creditList: any;
 
-  private creditDataURL: string = '/data.json';
+  private creditDataURL: string = '/ktu-gpa-calculator-app/data.json';
 
   constructor(private http: Http) {
     this.gradeValues = {
