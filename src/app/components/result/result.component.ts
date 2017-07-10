@@ -2,10 +2,11 @@ import { Component, OnInit, ViewChild, AfterViewInit } from '@angular/core';
 import { GradeCartService } from '../../services/grade-cart.service';
 import * as postscribe from 'postscribe'; // for ads
 
+
 @Component({
   selector: 'app-result',
   templateUrl: './result.component.html',
-  styleUrls: ['./result.component.css']
+  styleUrls: ['./result.component.css'],
 })
 export class ResultComponent implements OnInit,AfterViewInit {
 
@@ -22,9 +23,18 @@ export class ResultComponent implements OnInit,AfterViewInit {
       totalCredits += g.credit;
     }
 
-    this.gpa = sum/totalCredits;
-
-    this.gpaRounded = Math.round(this.gpa*100)/100;
+    sum /= totalCredits;
+    totalCredits = Math.round(sum*100)/100;
+    for(let i=0,j=0;i<=totalCredits;i+=0.01,j++){
+      setTimeout(() => {
+        this.gpa = i;
+        this.gpaRounded = Math.round(i*100)/100;
+      },j);
+    }
+    setTimeout(() => {
+      this.gpa = sum;
+      this.gpaRounded = Math.round(this.gpa*100)/100;
+    },1010);
   }
 
   ngAfterViewInit(){
