@@ -14,7 +14,7 @@ export class GradeCartService {
 
   creditList: any;
 
-  private creditDataURL: string = 'data.json';
+  private creditDataURL: string = '/data.json';
 
   constructor(private http: Http) {
     this.gradeValues = {
