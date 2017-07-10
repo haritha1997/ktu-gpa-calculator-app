@@ -1,12 +1,13 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, AfterViewInit } from '@angular/core';
 import { GradeCartService } from '../../services/grade-cart.service';
+import * as postscribe from 'postscribe'; // for ads
 
 @Component({
   selector: 'app-result',
   templateUrl: './result.component.html',
   styleUrls: ['./result.component.css']
 })
-export class ResultComponent implements OnInit {
+export class ResultComponent implements OnInit,AfterViewInit {
 
   gpa: number = 0;
   gpaRounded: number = 0;
@@ -24,6 +25,15 @@ export class ResultComponent implements OnInit {
     this.gpa = sum/totalCredits;
 
     this.gpaRounded = Math.round(this.gpa*100)/100;
+  }
+
+  ngAfterViewInit(){
+    postscribe('#adv',`<script type="text/javascript" language="javascript">
+      var aax_size='300x250';
+      var aax_pubname = 'navsblo03-21';
+      var aax_src='302';
+    </script>
+    <script type="text/javascript" language="javascript" src="//c.amazon-adsystem.com/aax2/assoc.js"></script>`);
   }
 
 
