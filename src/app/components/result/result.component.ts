@@ -38,12 +38,10 @@ export class ResultComponent implements OnInit,AfterViewInit {
   }
 
   ngAfterViewInit(){
-    postscribe('#adv',`<script type="text/javascript" language="javascript">
-      var aax_size='300x250';
-      var aax_pubname = 'navsblo03-21';
-      var aax_src='302';
-    </script>
-    <script type="text/javascript" language="javascript" src="//c.amazon-adsystem.com/aax2/assoc.js"></script>`);
+    postscribe('#adv1', `<iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-in.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=IN&source=ss&ref=as_ss_li_til&ad_type=product_link&tracking_id=navsblo03-21&marketplace=amazon&region=IN&placement=9351472574&asins=9351472574&linkId=bef94568975c95f728fec8894d7c1fa0&show_border=true&link_opens_in_new_window=true"></iframe>`);
+    postscribe('#adv2', `<iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-in.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=IN&source=ss&ref=as_ss_li_til&ad_type=product_link&tracking_id=navsblo03-21&marketplace=amazon&region=IN&placement=9351472582&asins=9351472582&linkId=3dcbff0d49e8cb837f844b83da129ebc&show_border=true&link_opens_in_new_window=true"></iframe>`);
+    postscribe('#adv3', `<iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-in.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=IN&source=ss&ref=as_ss_li_til&ad_type=product_link&tracking_id=navsblo03-21&marketplace=amazon&region=IN&placement=9351472604&asins=9351472604&linkId=7e8dff050cc17c0c7e18bc0cabfcb4a2&show_border=true&link_opens_in_new_window=true"></iframe>`);
+    
   }
 
 
