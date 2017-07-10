@@ -1,0 +1,14 @@
+#!/bin/bash
+ng build --prod --aot
+git add .
+git status
+read test
+
+if [ $test == n ]; then
+	exit 0
+fi
+
+git commit -m "$1"
+git push origin master
+git subtree push --prefix dist origin gh-pages
+
